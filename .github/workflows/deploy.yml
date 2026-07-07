@@ -11,8 +11,8 @@ jobs:
   test:
     environment: testing
     runs-on: ubuntu-latest
-    #container:
-     # image: node:20
+    container:
+     image: node:20
     env:
       MONGODB_CONNECTION_PROTOCOL: mongodb
       MONGODB_CLUSTER_ADDRESS: 127.0.0.1:27017
@@ -20,7 +20,7 @@ jobs:
       MONGODB_PASSWORD: password
       PORT: 8080
     services:
-      mongodb:
+      mongo:
         image: mongo
         ports:
           - 27017:27017
